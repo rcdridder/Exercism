@@ -11,7 +11,7 @@ namespace Exercism.ForLoops
         private int[] birdsPerDay;
         private static int[] birdsPerWeek = { 0, 2, 5, 3, 7, 8, 4 };
 
-        public BirdWatcherForeach(int[] birdsPerDay)
+        public BirdWatcherFor(int[] birdsPerDay)
         {
             this.birdsPerDay = birdsPerDay;
         }

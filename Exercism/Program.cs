@@ -2,4 +2,5 @@
 using Exercism.ExtensionMethods;
 using Exercism.Strings;
 
-Console.WriteLine(ReverseString.Reverse("Hello"));
+
+Console.WriteLine(RunLenghtEncodingString.Decode("XYZ"));
