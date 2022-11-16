@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercism.Arrays
+﻿namespace Exercism.Arrays
 {
     public class BirdWatcherArray
     {
@@ -31,7 +25,7 @@ namespace Exercism.Arrays
         public int CountForFirstDays(int numberOfDays)
         {
             int sum = 0;
-            for(int i = 0; i < numberOfDays; i++)
+            for (int i = 0; i < numberOfDays; i++)
                 sum += birdsPerDay[i];
             return sum;
         }
@@ -39,9 +33,9 @@ namespace Exercism.Arrays
         public int BusyDays()
         {
             int busyDays = 0;
-            foreach(int day in birdsPerDay)
+            foreach (int day in birdsPerDay)
             {
-                if(day > 4)
+                if (day > 4)
                     busyDays++;
             }
             return busyDays;

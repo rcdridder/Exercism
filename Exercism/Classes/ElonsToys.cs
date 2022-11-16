@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercism.Classes
+﻿namespace Exercism.Classes
 {
     public class RemoteControlCar
     {
         private int distanceDriven = 0;
-        private int batteryPercentage = 100; 
+        private int batteryPercentage = 100;
 
         public static RemoteControlCar Buy() => new RemoteControlCar();
 
@@ -19,7 +13,7 @@ namespace Exercism.Classes
 
         public void Drive()
         {
-            if(batteryPercentage > 0)
+            if (batteryPercentage > 0)
             {
                 distanceDriven += 20;
                 batteryPercentage--;
