@@ -2,5 +2,10 @@
 using Exercism.ExtensionMethods;
 using Exercism.Strings;
 
-
-Console.WriteLine(RunLenghtEncodingString.Decode("XYZ"));
+var candidates = new[] { "gallery", "ballerina", "regally", "clergy", "largely", "leading" };
+var sut = new AnagramString("allergy");
+var expected = new[] { "gallery", "regally", "largely" };
+foreach (string s in sut.FindAnagrams(candidates))
+{
+    Console.WriteLine(s);
+}
