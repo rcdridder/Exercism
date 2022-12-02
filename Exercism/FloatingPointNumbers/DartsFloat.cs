@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercism.FloatingPointNumbers
+﻿namespace Exercism.FloatingPointNumbers
 {
     public static class DartsFloat
     {
@@ -13,9 +7,9 @@ namespace Exercism.FloatingPointNumbers
             double locationSum = (x * x) + (y * y);
             if (locationSum <= 1 && locationSum >= -1)
                 return 10;
-            else if (locationSum <= 5 && locationSum >= -5)
+            else if (locationSum <= 25 && locationSum >= -25)
                 return 5;
-            else if (locationSum <= 10 && locationSum >= -10)
+            else if (locationSum <= 100 && locationSum >= -100)
                 return 1;
             else
                 return 0;
