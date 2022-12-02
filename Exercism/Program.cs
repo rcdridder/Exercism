@@ -3,5 +3,4 @@ using Exercism.ExtensionMethods;
 using Exercism.FloatingPointNumbers;
 using Exercism.IfStatements;
 
-int value = 2999;
-Console.WriteLine(DartsFloat.Score(0, 10));
+Console.WriteLine(TriangleFloat.IsEquilateral(2, 2, 2));
