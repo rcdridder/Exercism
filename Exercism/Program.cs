@@ -1,6 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Exercism.ExtensionMethods;
 using Exercism.FloatingPointNumbers;
-using Exercism.IfStatements;
-
-Console.WriteLine(TriangleFloat.IsEquilateral(2, 2, 2));
+SpaceAgeFloat sa = new SpaceAgeFloat(1000000000);
+Console.WriteLine(sa.OnEarth());
