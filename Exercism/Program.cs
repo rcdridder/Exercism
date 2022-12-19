@@ -2,4 +2,8 @@
 using Exercism.FloatingPointNumbers;
 using Exercism.ForeachLoops;
 
-Console.WriteLine(ScaleGenerator.Interval("F", "MMmMMMm"));
+string[] notesInScale = ScaleGenerator.Interval("d", "MmMMmAm");
+foreach(string s in notesInScale)
+{
+    Console.WriteLine(s);
+}

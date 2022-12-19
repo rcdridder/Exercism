@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercism.ForeachLoops
+﻿namespace Exercism.ForeachLoops
 {
     public static class ScaleGenerator
     {
-        private static string[] sharpLadder = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
-        private static string[] flatLadder = { "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" };
+        private static string[] sharps = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
+        private static string[] flats = { "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B" };
         private static Dictionary<string, int> sharpTonics = new()
         {
             { "C", 0 }, { "G", 7 }, { "D", 2 }, { "A", 9 }, { "E", 4 }, { "B", 11 }, { "F#", 6 },
@@ -21,120 +15,49 @@ namespace Exercism.ForeachLoops
             { "d", 2 }, { "g", 7 }, { "c", 0 }, { "f", 5 }, { "bb", 10 }, { "eb", 3 }
         };
 
-        public static string[] Chromatic(string tonic)
-        {
-            string[] ladder = new string[12];
-            if (sharpTonics.ContainsKey(tonic)) 
-            {
-                int noteIndex = sharpTonics[tonic];
-                for (int i = 0; i < ladder.Length; i++)
-                {
-                    ladder[i] = sharpLadder[noteIndex];
-                    noteIndex++;
-                    if (noteIndex > 11)
-                        noteIndex = 0;
-                }
-            }
-            else if(flatTonics.ContainsKey(tonic))
-            {
-                int noteIndex = flatTonics[tonic];
-                for (int i = 0; i < ladder.Length; i++)
-                {
-                    ladder[i] = flatLadder[noteIndex];
-                    noteIndex++;
-                    if (noteIndex > 11)
-                        noteIndex = 0;
-                }
-            }
-            else 
-                throw new ArgumentException("This is not a valid tonic!");
-            return ladder;
-        }
+        public static string[] Chromatic(string tonic) => TonicShifter(tonic).ToArray();
 
         public static string[] Interval(string tonic, string pattern)
         {
-            char[] intervals = pattern.ToCharArray();
-            int intervalIndex = 0;
-            string[] ladder = new string[8];
+            List<string> notes = TonicShifter(tonic);
+            List<string> scale = new();
+            int index = 0;
+            foreach (char c in pattern)
+            {
+                scale.Add(notes[index]);
+                if (c == 'm')
+                    index++;
+                if (c == 'M')
+                    index += 2;
+                if (c == 'A')
+                    index += 3;
+            }
+            scale.Add(notes[0]);
+            return scale.ToArray();
+        }
+
+        private static List<string> TonicShifter(string tonic)
+        {
+            string[] notes;
+            int index;
+            List<string> shiftedScale = new();
             if (sharpTonics.ContainsKey(tonic))
             {
-            int noteIndex = sharpTonics[tonic];
-                for (int i = 0; i < ladder.Length; i++)
-                {
-                    if (i == 7)
-                        ladder[i] = sharpLadder[sharpTonics[tonic]];
-                    else
-                        ladder[i] = sharpLadder[noteIndex];
-                    if (intervalIndex >= intervals.Length)
-                        break;
-                    if (intervals[intervalIndex] == 'm')
-                    {
-                        noteIndex++;
-                        if (noteIndex == 12)
-                            noteIndex = 0;
-                    }
-                    else if (intervals[intervalIndex] == 'M')
-                    {
-                        noteIndex += 2;
-                        if (noteIndex == 12)
-                            noteIndex = 0;
-                        if (noteIndex == 13)
-                            noteIndex = 1;
-                    }
-                    else if (intervals[intervalIndex] == 'A')
-                    {
-                        noteIndex += 3;
-                        if (noteIndex == 12)
-                            noteIndex = 0;
-                        if (noteIndex == 13)
-                            noteIndex = 1;
-                        if (noteIndex == 14)
-                            noteIndex = 2;
-                    }
-                    intervalIndex++;
-                }
+                notes = sharps;
+                index = sharpTonics[tonic];
             }
             else if (flatTonics.ContainsKey(tonic))
             {
-                int noteIndex = flatTonics[tonic];
-                for (int i = 0; i < ladder.Length; i++)
-                {
-                    if (i == 7)
-                        ladder[i] = flatLadder[flatTonics[tonic]];
-                    else
-                        ladder[i] = flatLadder[noteIndex];
-                    if (intervalIndex >= intervals.Length)
-                        break;
-                    if (intervals[intervalIndex] == 'm')
-                    {
-                        noteIndex++;
-                        if (noteIndex == 12)
-                            noteIndex = 0;
-                    }
-                    else if (intervals[intervalIndex] == 'M')
-                    {
-                        noteIndex += 2;
-                        if (noteIndex == 12)
-                            noteIndex = 0;
-                        if (noteIndex == 13)
-                            noteIndex = 1;
-                    }
-                    else if (intervals[intervalIndex] == 'A')
-                    {
-                        noteIndex += 3;
-                        if (noteIndex == 12)
-                            noteIndex = 0;
-                        if (noteIndex == 13)
-                            noteIndex = 1;
-                        if (noteIndex == 14)
-                            noteIndex = 2;
-                    }
-                    intervalIndex++;
-                }
+                notes = flats;
+                index = flatTonics[tonic];
             }
             else
-                throw new ArgumentException("This is not a valid tonic!");
-            return ladder;
+                throw new ArgumentException("Invalid tonic!");
+            for (int i = index; i < notes.Length + index; i++)
+            {
+                shiftedScale.Add(notes[i % notes.Length]);
+            }
+            return shiftedScale;
         }
     }
 }
