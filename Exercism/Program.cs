@@ -2,8 +2,5 @@
 using Exercism.FloatingPointNumbers;
 using Exercism.ForeachLoops;
 
-string[] notesInScale = ScaleGenerator.Interval("d", "MmMMmAm");
-foreach(string s in notesInScale)
-{
-    Console.WriteLine(s);
-}
+IEnumerable<int> books = new List<int>() { };
+Console.WriteLine(BookStoreFloat.Total(books)); 
