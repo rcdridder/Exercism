@@ -1,10 +1,10 @@
 ﻿namespace Exercism.Classes
 {
-    public class SpaceAgeClass
+    public class SpaceAgeClasses
     {
         private double seconds;
         private double years;
-        public SpaceAgeClass(int seconds)
+        public SpaceAgeClasses(int seconds)
         {
             this.seconds = Convert.ToDouble(seconds);
             years = this.seconds / 31557600;
