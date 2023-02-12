@@ -2,4 +2,4 @@
 using Exercism.Chars;
 using Exercism.Strings;
 
-Console.WriteLine(RotationalCipherString.Rotate("n", 13));
+Console.WriteLine(RotationalCipherStrings.Rotate("n", 13));
