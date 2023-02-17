@@ -1,6 +1,6 @@
-﻿namespace Exercism.Chars
+﻿namespace Exercism.Strings
 {
-    public static class RotationalCipherChar
+    public static class RotationalCipherStrings
     {
         public static string Rotate(string text, int shiftKey)
         {
@@ -9,11 +9,11 @@
             string output = string.Empty;
             foreach (char c in text)
             {
-                if (!Char.IsLetter(c))
+                if (!char.IsLetter(c))
                     output += c;
                 else
                 {
-                    if (Char.IsUpper(c))
+                    if (char.IsUpper(c))
                         output += Convert.ToChar(((byte)c + shiftKey - 65) % 26 + 65);
                     else
                         output += Convert.ToChar(((byte)c + shiftKey - 97) % 26 + 97);

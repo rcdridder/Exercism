@@ -1,6 +1,6 @@
 ﻿namespace Exercism.Strings
 {
-    public static class BobString
+    public static class BobStrings
     {
         public static string Response(string message)
         {

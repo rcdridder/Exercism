@@ -1,9 +1,9 @@
 ﻿namespace Exercism.Strings
 {
-    public class AnagramString
+    public class AnagramStrings
     {
         private string baseWord;
-        public AnagramString(string baseWord) => this.baseWord = baseWord;
+        public AnagramStrings(string baseWord) => this.baseWord = baseWord;
 
         public string[] FindAnagrams(string[] potentialMatches)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Exercism.Strings
 {
-    public static class ReverseString
+    public static class ReverseStrings
     {
         public static string Reverse(string input)
         {
