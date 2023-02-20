@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Exercism.Chars;
 using Exercism.ForeachLoops;
 
-Console.WriteLine(AtbashCipher.Encode("Ariana Grande"));
-Console.WriteLine(AtbashCipher.Decode("zirzmztizmwv"));
+Console.WriteLine(AcronymChars.Abbreviate("Something - I made up from thin air"));
+
