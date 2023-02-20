@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Exercism.Chars;
-using Exercism.ForeachLoops;
+using Exercism.SwitchStatements;
 
-Console.WriteLine(AcronymChars.Abbreviate("Something - I made up from thin air"));
+Console.WriteLine(FootballMatchReports.AnalyzeOffField(new Injury(8)));
 

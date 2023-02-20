@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercism.Chars
+﻿namespace Exercism.Chars
 {
     public static class AcronymChars
     {
@@ -12,11 +6,11 @@ namespace Exercism.Chars
         {
             string output = phrase[0].ToString();
             int index = 0;
-            foreach(char c in phrase)
+            foreach (char c in phrase)
             {
                 if (c == '-' || c == '_' || char.IsWhiteSpace(c))
                 {
-                    if(phrase[index + 1] == ' ' ||
+                    if (phrase[index + 1] == ' ' ||
                         phrase[index + 1] == '-' ||
                         phrase[index + 1] == '_')
                     {

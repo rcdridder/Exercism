@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercism.Strings
+﻿namespace Exercism.Strings
 {
     public static class IsogramStrings
     {
@@ -14,7 +8,7 @@ namespace Exercism.Strings
             List<char> chars = new();
             foreach (char c in word)
             {
-                if(char.IsLetter(c))
+                if (char.IsLetter(c))
                 {
                     if (chars.Contains(c))
                         return false;
