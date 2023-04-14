@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Exercism.Dictionaries;
+Console.WriteLine(FootballMatchReports.AnalyzeOffField(new Injury(8)));
 
-Console.WriteLine(ScrabbleScore.Score("a"));
+Console.WriteLine(s);
+}

@@ -1,6 +1,6 @@
 ﻿namespace Exercism.Strings
 {
-    public static class RunLenghtEncodingString
+    public static class RunLenghtEncodingStrings
     {
         public static string Encode(string input)
         {
