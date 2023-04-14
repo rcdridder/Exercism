@@ -1,9 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Exercism.FloatingPointNumbers;
-using Exercism.ForeachLoops;
+using Exercism.Dictionaries;
 
-string[] notesInScale = ScaleGenerator.Interval("d", "MmMMmAm");
-foreach(string s in notesInScale)
-{
-    Console.WriteLine(s);
-}
+Console.WriteLine(ScrabbleScore.Score("a"));
