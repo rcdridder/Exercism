@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Lambdas\" />
+    <Compile Remove="Lambdas\**" />
+    <EmbeddedResource Remove="Lambdas\**" />
+    <None Remove="Lambdas\**" />
   </ItemGroup>
 
 </Project>
