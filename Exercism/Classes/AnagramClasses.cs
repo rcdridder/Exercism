@@ -20,7 +20,6 @@
 
         private bool IsAnagram(string word)
         {
-            bool isAnagram = true;
             word = word.ToLower();
             baseWord = baseWord.ToLower();
             if (word.Length != baseWord.Length || word == baseWord)
@@ -34,10 +33,10 @@
             foreach (char letter in inputLetters)
             {
                 if (baseWordLetters[i] != letter)
-                    isAnagram = false;
+                    return false;
                 i++;
             }
-            return isAnagram;
+            return true;
         }
     }
 }
