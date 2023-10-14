@@ -1,6 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Exercism.IntegralNumbers;
+using Exercism.IfStatements;
 
-byte[] arr = HyperOptimizedTelemetry.ToBuffer(Int16.MaxValue);
-Console.WriteLine(BitConverter.ToString(arr));
-Console.WriteLine(HyperOptimizedTelemetry.FromBuffer(arr));
+Console.WriteLine(SayIf.InEnglish(987654321123L));
